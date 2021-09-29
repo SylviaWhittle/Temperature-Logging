@@ -78,7 +78,7 @@ for filename in os.listdir(dataFolder):
     
 
 
-fig.tight_layout(pad=10.0)
+fig.tight_layout()
 plt.show()
 
 
@@ -98,17 +98,18 @@ for date in dates:
     formatted_date = datetime.strptime(date, '%Y-%m-%d %H:%M:%S')
     formatted_dates.append(formatted_date)
 
-dates = dates[:40]
+formatted_dates = formatted_dates[len(formatted_dates)-100:]
 
 temps = data["Celsius(°C)"]
+temps = temps[len(temps)-100:]
 
 # Create subplot
 # ax = fig.add_subplot(111)
 ax = fig.add_subplot(1, 1, 1)
 
-ax.xaxis.set_minor_locator(mdates.DayLocator(interval=1))
-ax.xaxis.set_major_locator(mdates.DayLocator(interval=1))
-ax.xaxis.set_major_formatter(mdates.DateFormatter('%d %H:%M'))
+# ax.xaxis.set_minor_locator(mdates.DayLocator(interval=1))
+# ax.xaxis.set_major_locator(mdates.DayLocator(interval=1))
+ax.xaxis.set_major_formatter(mdates.DateFormatter('%H:%M:%S'))
 
 ax.plot(formatted_dates, temps, color = plotcolour)
 fig.autofmt_xdate()
