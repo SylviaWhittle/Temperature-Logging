@@ -8,16 +8,6 @@ import seaborn as sb
 import os
 from datetime import datetime
 
-# Get the absolute file path for this script
-# FileDir = os.path.dirname(os.path.realpath('__file__'))
-
-# File with data in it
-# file1 = 'C09 - XRAY.txt'
-
-# Join the two paths together
-# filename = os.path.join(FileDir, file1)
-
-
 backgroundcolour = (30/255, 70/255, 90/255, 0.9)
 axescolour = (1, 1, 1, 0.6)
 plotcolour = (1, 0.4, 0.3)
