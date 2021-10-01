@@ -26,7 +26,7 @@ plotcolour = (1, 0.4, 0.3)
 
 fig = plt.figure()
 fig.patch.set_facecolor(backgroundcolour)
-figure(figsize=(20, 6), dpi=80)
+figure(figsize=(20, 16), dpi=100)
 fig.patch.set_facecolor(backgroundcolour)
 fig.patch.set_alpha(1)
 
@@ -77,7 +77,8 @@ for filename in os.listdir(dataFolder):
 
     
 
-
+fig.set_figheight(8)
+fig.set_figwidth(8)
 fig.tight_layout()
 plt.show()
 
