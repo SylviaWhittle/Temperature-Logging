@@ -1,3 +1,8 @@
+#%% CHOOSE FOLDER
+# dataFolder = './Temperature Data'
+dataFolder = './Temperature Data NEW'
+
+
 #%%
 import numpy as np
 import pandas as pd
@@ -20,7 +25,6 @@ figure(figsize=(20, 16), dpi=100)
 fig.patch.set_facecolor(backgroundcolour)
 fig.patch.set_alpha(1)
 
-dataFolder = './Temperature Data'
 count = 1
 for filename in os.listdir(dataFolder):
     print(filename)
@@ -38,7 +42,7 @@ for filename in os.listdir(dataFolder):
 
     # Create subplot
     # ax = fig.add_subplot(111)
-    ax = fig.add_subplot(3, 1, count)
+    ax = fig.add_subplot(len(os.listdir(dataFolder)), 1, count)
 
     ax.xaxis.set_minor_locator(mdates.DayLocator(interval=1))
     ax.xaxis.set_major_locator(mdates.DayLocator(interval=1))
@@ -48,7 +52,7 @@ for filename in os.listdir(dataFolder):
     fig.autofmt_xdate()
 
     ax.grid(True)
-    ax.set_xlabel("Day (September 2021)")
+    ax.set_xlabel("Date - October - November")
     ax.set_ylabel("Temperature °C")
     ax.title.set_text(filename)
     # Colour
@@ -67,8 +71,8 @@ for filename in os.listdir(dataFolder):
 
     
 
-fig.set_figheight(8)
-fig.set_figwidth(8)
+fig.set_figheight(10)
+fig.set_figwidth(20)
 fig.tight_layout()
 plt.show()
 
