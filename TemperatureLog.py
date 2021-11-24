@@ -1,6 +1,6 @@
 #%% CHOOSE FOLDER
 # dataFolder = './Temperature Data'
-dataFolder = './Temperature Data NEW'
+dataFolder = './Temperature Data November'
 
 
 #%%
@@ -52,7 +52,7 @@ for filename in os.listdir(dataFolder):
     fig.autofmt_xdate()
 
     ax.grid(True)
-    ax.set_xlabel("Date - October - November")
+    ax.set_xlabel("Date - November")
     ax.set_ylabel("Temperature °C")
     ax.title.set_text(filename)
     # Colour
